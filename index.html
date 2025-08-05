@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CI/CD Pipeline - Business Overview</title>
+    <title>Waystation CI/CD Pipeline - Business Overview</title>
     <style>
         * {
             margin: 0;
@@ -28,21 +28,70 @@
         }
 
         .header {
-            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
             color: white;
-            padding: 30px;
+            padding: 40px 30px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:white;stop-opacity:0.1" /><stop offset="50%" style="stop-color:white;stop-opacity:0.2" /><stop offset="100%" style="stop-color:white;stop-opacity:0.1" /></linearGradient></defs><rect width="100" height="20" fill="url(%23grad)" /></svg>') repeat-x;
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .waystation-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 15px;
+            margin-right: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            background: white;
+            padding: 5px;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 2.5em;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
 
         .header h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
             font-weight: 300;
+            position: relative;
+            z-index: 1;
         }
 
         .header p {
             font-size: 1.2em;
             opacity: 0.9;
+            position: relative;
+            z-index: 1;
         }
 
         .pipeline {
@@ -124,6 +173,11 @@
             font-weight: 500;
         }
 
+        .waystation-badge {
+            background: linear-gradient(135deg, #1a237e, #3949ab);
+            color: white;
+        }
+
         .stage-status {
             position: absolute;
             top: 15px;
@@ -172,7 +226,7 @@
         }
 
         .business-value {
-            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            background: linear-gradient(135deg, #1a237e, #3949ab);
             color: white;
             padding: 30px;
             border-radius: 15px;
@@ -233,7 +287,7 @@
         .metric-value {
             font-size: 2em;
             font-weight: 700;
-            color: #3498db;
+            color: #1a237e;
             margin-bottom: 5px;
         }
 
@@ -256,12 +310,25 @@
                 margin-right: 0;
                 margin-bottom: 15px;
             }
+
+            .waystation-logo {
+                flex-direction: column;
+            }
+
+            .logo-image {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
+            <div class="waystation-logo">
+                <img src="waystationltd_logo.jpeg" alt="Waystation Ltd Logo" class="logo-image">
+                <div class="logo-text">Waystation</div>
+            </div>
             <h1>🚀 CI/CD Pipeline</h1>
             <p>Automated WordPress Theme Deployment Pipeline</p>
         </div>
@@ -273,12 +340,12 @@
                 <div class="stage-content">
                     <div class="stage-title">1. Code Commit Trigger</div>
                     <div class="stage-description">
-                        Developer pushes code changes to the main branch in GitHub repository
+                        Waystation developers push code changes to the main branch in GitHub repository
                     </div>
                     <div class="stage-details">
                         <span class="detail-badge">GitHub Actions</span>
                         <span class="detail-badge">Main Branch</span>
-                        <span class="detail-badge">Automatic Trigger</span>
+                        <span class="detail-badge waystation-badge">Waystation Secure</span>
                     </div>
                 </div>
                 <div class="stage-status status-success">✅ Active</div>
@@ -292,15 +359,15 @@
             <div class="stage test">
                 <div class="stage-icon">🧪</div>
                 <div class="stage-content">
-                    <div class="stage-title">2. Automated Testing</div>
+                    <div class="stage-title">2. Waystation Quality Assurance</div>
                     <div class="stage-description">
-                        Comprehensive testing suite validates code quality and functionality before deployment
+                        Comprehensive testing suite validates Waystation's code quality and functionality before deployment
                     </div>
                     <div class="stage-details">
                         <span class="detail-badge">PHPUnit Tests</span>
                         <span class="detail-badge">WordPress Integration</span>
                         <span class="detail-badge">WooCommerce Testing</span>
-                        <span class="detail-badge">MySQL Database</span>
+                        <span class="detail-badge waystation-badge">Waystation Standards</span>
                     </div>
                 </div>
                 <div class="stage-status status-success">✅ Passed</div>
@@ -315,14 +382,14 @@
                 <div class="stage deploy">
                     <div class="stage-icon">🎯</div>
                     <div class="stage-content">
-                        <div class="stage-title">3A. Production Deploy</div>
+                        <div class="stage-title">3A. Waystation Production Deploy</div>
                         <div class="stage-description">
-                            Deploys tested code to live production server (only after tests pass)
+                            Deploys tested code to Waystation's live production server (only after tests pass)
                         </div>
                         <div class="stage-details">
                             <span class="detail-badge">SFTP Upload</span>
                             <span class="detail-badge">Production Server</span>
-                            <span class="detail-badge">Conditional Deploy</span>
+                            <span class="detail-badge waystation-badge">Waystation Secure</span>
                         </div>
                     </div>
                     <div class="stage-status status-success">✅ Deployed</div>
@@ -331,14 +398,14 @@
                 <div class="stage parallel">
                     <div class="stage-icon">⚡</div>
                     <div class="stage-content">
-                        <div class="stage-title">3B. Direct Deploy</div>
+                        <div class="stage-title">3B. Waystation Rapid Deploy</div>
                         <div class="stage-description">
-                            Alternative deployment path that runs independently for rapid updates
+                            Waystation's alternative deployment path for rapid theme updates and hotfixes
                         </div>
                         <div class="stage-details">
                             <span class="detail-badge">Parallel Process</span>
                             <span class="detail-badge">Theme Updates</span>
-                            <span class="detail-badge">File Sync</span>
+                            <span class="detail-badge waystation-badge">Waystation Fast Track</span>
                         </div>
                     </div>
                     <div class="stage-status status-running">🔄 Active</div>
@@ -347,31 +414,31 @@
         </div>
 
         <div class="business-value">
-            <h2>💼 Business Value</h2>
-            <p>This automated pipeline delivers significant business benefits by ensuring reliable, fast, and safe deployments.</p>
+            <h2>💼 Waystation Business Value</h2>
+            <p>Waystation's automated pipeline delivers significant business benefits by ensuring reliable, fast, and safe deployments for our clients.</p>
             
             <div class="value-points">
                 <div class="value-point">
-                    <h3>🛡️ Risk Reduction</h3>
-                    <p>Automated testing catches bugs before they reach production, preventing costly downtime and customer issues.</p>
+                    <h3>🛡️ Waystation Quality Guarantee</h3>
+                    <p>Our automated testing catches bugs before they reach production, preventing costly downtime and ensuring superior customer experiences.</p>
                 </div>
                 <div class="value-point">
-                    <h3>⚡ Faster Delivery</h3>
-                    <p>Instant deployment after code changes means features reach customers faster, improving competitive advantage.</p>
+                    <h3>⚡ Lightning-Fast Delivery</h3>
+                    <p>Waystation's instant deployment system means client features reach customers faster, maintaining competitive advantage.</p>
                 </div>
                 <div class="value-point">
-                    <h3>💰 Cost Savings</h3>
-                    <p>Reduced manual deployment effort and fewer production issues lower operational costs and increase team productivity.</p>
+                    <h3>💰 Waystation Cost Efficiency</h3>
+                    <p>Reduced manual deployment effort and fewer production issues lower operational costs while increasing team productivity.</p>
                 </div>
                 <div class="value-point">
-                    <h3>📊 Quality Assurance</h3>
-                    <p>Consistent testing ensures high-quality code standards and maintains customer satisfaction.</p>
+                    <h3>📊 Premium Quality Standards</h3>
+                    <p>Waystation's consistent testing ensures enterprise-grade code standards and maintains exceptional client satisfaction.</p>
                 </div>
             </div>
         </div>
 
         <div class="metrics">
-            <h2>📈 Pipeline Performance Metrics</h2>
+            <h2>📈 Waystation Pipeline Performance</h2>
             <div class="metric-grid">
                 <div class="metric">
                     <div class="metric-value">~5min</div>
@@ -379,7 +446,7 @@
                 </div>
                 <div class="metric">
                     <div class="metric-value">100%</div>
-                    <div class="metric-label">Automated Testing Coverage</div>
+                    <div class="metric-label">Waystation Test Coverage</div>
                 </div>
                 <div class="metric">
                     <div class="metric-value">0</div>
@@ -387,7 +454,7 @@
                 </div>
                 <div class="metric">
                     <div class="metric-value">24/7</div>
-                    <div class="metric-label">Deployment Availability</div>
+                    <div class="metric-label">Waystation Availability</div>
                 </div>
             </div>
         </div>
